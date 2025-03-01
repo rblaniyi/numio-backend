@@ -1,0 +1,27 @@
+# Node.js (if you're using Node.js)
+node_modules/
+
+# Logs
+*.log
+*.log.*
+
+# Build directories
+dist/
+build/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE or editor files
+.vscode/
+.idea/
+
+# Python files (if you're working with Python)
+*.pyc
+__pycache__/
+
+# JetBrains files
+*.iml
+
+firebase-admin-key.json
