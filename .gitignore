@@ -25,4 +25,4 @@ __pycache__/
 *.iml
 
 # Ignore firebase secret key
-firebase-admin-key.json
+config/firebase-admin-key.json
