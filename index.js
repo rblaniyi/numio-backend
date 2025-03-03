@@ -1,17 +1,35 @@
-// index.js
+require("dotenv").config();
 const express = require("express");
+const cors = require("cors");
+const bodyParser = require('body-parser');
+
+const authRoutes = require("./src/routes/authRoutes");
+const paymentRoutes = require("./src/routes/paymentRoutes");
+const userRoutes = require("./src/routes/userRoutes");
+
 const app = express();
-const userRoutes = require("./routes/userRoutes");  // Import the user routes
 
-// Use the routes under the '/api/users' path
-app.use("/api/users", userRoutes);
+// Middleware
+app.use(cors());
+app.use(express.json());
 
-// Set up a basic route to test
+// Debugging logs (remove later)
+console.log("Auth Routes:", typeof authRoutes);
+console.log("Payment Routes:", typeof paymentRoutes);
+console.log("User Routes:", typeof userRoutes);
+
+// Routes
+app.use(bodyParser.json());
+app.use("/auth", authRoutes);
+app.use("/payments", paymentRoutes);
+app.use("/users", userRoutes);
+
 app.get("/", (req, res) => {
-  res.send("Welcome to the Home Page");
+  res.send("Numio Backend is running!");
 });
 
-// Set the app to listen on a specific port (e.g., port 3000)
-app.listen(3000, () => {
-  console.log("Server is running on http://localhost:3000");
-});
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+
+

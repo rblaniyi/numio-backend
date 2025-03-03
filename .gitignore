@@ -26,3 +26,6 @@ __pycache__/
 
 # Ignore firebase secret key
 config/firebase-admin-key.json
+
+.env
+serviceAccountKey.json
