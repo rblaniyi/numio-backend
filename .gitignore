@@ -25,7 +25,5 @@ __pycache__/
 *.iml
 
 # Ignore firebase secret key
-config/firebase-admin-key.json
-
 .env
 serviceAccountKey.json
